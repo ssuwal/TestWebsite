@@ -1,0 +1,373 @@
+/* app css stylesheet */
+@font-face{
+    font-family: kavyafont;
+    src:url(../fonts/KF.ttf);
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    background-image: url(../img/s1.jpg);
+}
+.menu {
+    list-style: none;
+    /* border-bottom: 0.1em solid black; */
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
+
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+}
+
+.menu > li {
+    display: inline;
+}
+
+.menu > li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+    content: "";
+    padding: 0;
+}
+.view-animate-container {
+    position:relative;
+    //height:100px!important;
+    position:relative;
+    //background:white;
+    //border:1px solid black;
+    //height:40px;
+    overflow:hidden;
+}
+
+#logo>h1{
+    font-family: "kavyafont";
+    
+    font-size: 8em;
+    background: -webkit-linear-gradient(#F4DE18, #1C6750);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: lighter;
+}
+
+.view-animate {
+    //padding:10px;
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+
+    display:block;
+    width:100%;
+    border-left:1px solid black;
+
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    //padding:10px;
+}
+
+.view-animate.ng-enter {
+    left:100%;
+}
+.view-animate.ng-enter.ng-enter-active {
+    left:0;
+}
+.view-animate.ng-leave.ng-leave-active {
+    left:-100%;
+}
+@-webkit-keyframes slideInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px);
+        transform: translateY(-2000px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px);
+        -ms-transform: translateY(-2000px);
+        transform: translateY(-2000px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.slide-enter{
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+}
+
+.slide-enter.slide-enter-active{
+    opacity: 1;
+}
+
+@-webkit-keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+
+.fade-leave {
+    -webkit-animation-name: fadeOutDown;
+    animation-name: fadeOutDown;
+}
+
+
+.angularview.ng-enter { animation: slideInDown 0.5s both ease-in; z-index: 8888; }
+.angularview.ng-leave { animation: fadeOutDown 0.5s both ease-in; z-index: 9999; }
+
+#upperbar{
+    position: fixed;
+
+    z-index: 999999999;
+    background: black;
+    width: 100%;
+    height: 90px;
+}
+
+.bio{
+    background: url(../img/s5.png);
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: 100%;
+    width: 100%;
+}
+
+#angularview{
+    height:100%;
+    width: 100%;
+    margin-top: 90px;
+}
+
+.about{
+    background: url(../img/s6.png);
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: 100%;
+    width: 100%;
+}
+
+.tech{
+    background: url(../img/s7.png);
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: 100%;
+    width: 100%;
+}
+
+#home{
+    background: url(../img/s8.png);
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: 100%;
+    width: 100%;
+}
+.homepara{
+    opacity: 0;
+    
+    text-overflow: ellipsis;
+}
+
+.homepara>h1{
+    font-size: 4em;
+    
+    font-family: cursive;
+    height: 9%;
+    background-color: rgba(26, 136, 88, 0.6);
+    width: 30%;
+    border-radius: 15px;
+    left: 12%;
+    position: fixed;
+    top: 20%;
+    color: rgb(251, 251, 251);
+}
+
+.texthome{
+    font-family: cursive;
+    
+    position: fixed;
+    width: 75%;
+    text-align: center;
+    background-color: rgba(93, 156, 62, 0.78);
+    font-size: 20px;
+    left: 15%;
+    top: 33%;
+    padding: 20px;
+    border-radius: 10px;
+    color: rgb(229, 222, 201);
+    height: 500px;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
+}
+
+.contact{
+    background: url(../img/s2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: 100%;
+    width: auto;
+    background-position: -50% 80%;
+}
+
+#express{
+    background-image: url(../img/express.png);
+
+    height: 15%;
+    width: 25%;
+    background-repeat: no-repeat;
+    position: fixed;
+    left: 20%;
+    opacity: 0;
+    bottom: -10%;
+}
+#html5{
+    opacity:0;
+    height: 400px;
+    width: 300px;
+    background: url(../img/logo_html5.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: -300px;
+    position: fixed;
+}
+
+#java{
+    background-image: url(../img/java.png);
+
+    position: relative;
+    height: 25%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 85%;
+    top: -36%;
+    opacity: 0;
+}
+
+#logo{
+    display: inline-block;
+
+    position: relative;
+    float: left;
+}
+
+#menubar{
+    font-size: 2em;
+
+    font-family: monospace;
+    height: 45px;
+    /* background: green; */
+    width: 640px;
+    position: relative;
+    float: right;
+    margin-top: 15px;
+}
+
+a:hover{
+    color : blue;
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+/* color: rgb(76, 158, 72); */
+}
+
+#nodejs{
+    background-image: url(../img/nodejs-dark.png);
+
+    height: 15%;
+    width: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    left: 50%;
+    bottom: -90%;
+    opacity: 0;
+    background-position: 48% 52%;
+}
+#angularjs{
+    background-image: url(../img/angularjs.png);
+    
+    height: 16%;
+    width: 23%;
+    background-repeat: no-repeat;
+    position: fixed;
+    left: 32%;
+    background-size: contain;
+    opacity: 0;
+    top: 0%;
+}
+#mongodb{
+    background-image: url(../img/mongodb.png);
+    
+    height: 20%;
+    width: 30%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 15%;
+    top: -5%;
+    opacity: 0;
+}
+
+#mean{
+    background-image: url(../img/meanlogo.png);
+    
+    height: 27%;
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    position: relative;
+    /* left: 60%; */
+    bottom: -23%;
+    opacity: 0;
+}
